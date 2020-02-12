@@ -1,0 +1,11 @@
+<div class="position-relative overflow-hidden bg-light">
+  <div class="col-md-12 p-lg-5 pup">
+    <h1 class="display-4 font-weight-bold text-danger"><i class="fa fa-paw mr-1"></i> Puppy Love</h1>
+    <p class="lead font-weight-normal text-muted">Nothing warms the heart like a cold nose...</p>
+    <a *ngIf="!registerMode" class="btn btn-danger mr-1" href="#" (click)="registerToggle()">Register</a>
+    <a *ngIf="!registerMode" class="btn btn-secondary ml-1" href="#">Learn More</a>
+    <div *ngIf="registerMode" class="row">
+      <app-register class="col-4" (cancelRegister)="cancelRegisterMode($event)"></app-register>
+    </div>
+  </div>
+</div>
