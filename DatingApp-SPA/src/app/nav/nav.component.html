@@ -1,28 +1,25 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <a class="navbar-brand text-danger font-weight-bold" href="#">Date-A-Dog.Com</a>
   <ul class="navbar-nav mr-auto">
-    <li class="nav-item active">
+    <li *ngIf="loggedIn()" class="nav-item">
       <a class="nav-link" href="#">Matches</a>
     </li>
-    <li class="nav-item">
+    <li *ngIf="loggedIn()" class="nav-item">
       <a class="nav-link" href="#">Dogs</a>
     </li>
-    <li class="nav-item">
+    <li *ngIf="loggedIn()" class="nav-item">
       <a class="nav-link" href="#">Messages</a>
-    </li>
-    <li class="nav-item">
-      <a (click)="logOut();" class="nav-link" href="#">Log Out</a>
     </li>
   </ul>
 
-  <div *ngIf="loggedIn()" class="dropdown">
-    <a class="dropdown-toggle text-light">
+  <div *ngIf="loggedIn()" class="dropdown" dropdown>
+    <a class="dropdown-toggle text-light" dropdownToggle>
       Welcome {{ authService.decodedToken?.unique_name | titlecase }}
     </a>
-    <div class="dropdown-menu">
+    <div class="dropdown-menu" *dropdownMenu>
       <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Edit Profile</a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i> Logout</a>
+      <a class="dropdown-item" (click)="logOut();"><i class="fa fa-sign-out"></i> Logout</a>
     </div>
   </div>
 
