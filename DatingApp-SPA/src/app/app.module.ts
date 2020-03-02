@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BsDropdownModule } from 'ngx-bootstrap';
+import { BsDropdownModule, TabsModule } from 'ngx-bootstrap';
 import { appRoutes } from './routes';
 import { JwtModule } from '@auth0/angular-jwt';
 
@@ -19,6 +19,9 @@ import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { UserService } from './_services/user.service';
 import { MemberCardComponent } from './members/member-list/member-card/member-card.component';
+import { MemberDetailComponent } from './members/member-list/member-detail/member-detail.component';
+import { MemberDetailResolver } from './_resolvers/member-detail-resolver';
+import { MemberListResolver } from './_resolvers/member-list-resolver';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -33,7 +36,8 @@ export function tokenGetter() {
       MemberListComponent,
       ListsComponent,
       MessagesComponent,
-      MemberCardComponent
+      MemberCardComponent,
+      MemberDetailComponent
    ],
    imports: [
       BrowserModule,
@@ -41,6 +45,7 @@ export function tokenGetter() {
       FormsModule,
       BrowserAnimationsModule,
       BsDropdownModule.forRoot(),
+      TabsModule.forRoot(),
       RouterModule.forRoot(appRoutes),
       JwtModule.forRoot({
          config: {
@@ -53,7 +58,9 @@ export function tokenGetter() {
    providers: [
       AuthService,
       ErrorInterceptorProvider,
-      UserService
+      UserService,
+      MemberDetailResolver,
+      MemberListResolver
    ],
    bootstrap: [
       AppComponent
