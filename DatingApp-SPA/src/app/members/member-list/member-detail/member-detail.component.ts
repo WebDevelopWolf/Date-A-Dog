@@ -20,12 +20,4 @@ export class MemberDetailComponent implements OnInit {
     });
   }
 
-  // loadUser() {
-  //   this.userService.getUser(+this.route.snapshot.params.id).subscribe((user: User) => {
-  //     this.user = user;
-  //   }, error => {
-  //     this.alertify.error(error);
-  //   });
-  // }
-
 }

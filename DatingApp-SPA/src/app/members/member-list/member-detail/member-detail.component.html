@@ -43,7 +43,14 @@
             <p>{{user.interests}}</p>
           </tab>
           <tab heading="Photos">
-            
+            <carousel>
+              <slide *ngFor="let photo of user.photos">
+                <img src="{{photo.url}}" class="slide-img">
+                <div class="carousel-caption d-none d-md-block slide-desc">
+                  <p>{{photo.description}}</p>
+                </div>
+              </slide>
+            </carousel>
           </tab>
           <tab heading="Messages">
             <p>Messages will go here</p>
