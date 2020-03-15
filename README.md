@@ -9,6 +9,7 @@ Date-A-Dog.com is an example dog dating website build using:
 # New Features!
 
   - [03/03/2020] - Member Details - Photo gallery added to member details
+  - [14/03/2020] - Member Details - Users can now edit their own profile
 
 
 You can also:
