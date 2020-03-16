@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-sm-2" *ngFor="let photo of photos">
+    <img src="{{photo.url}}" class="img-thumbnail p-1" alt="">
+    <div class="text-center">
+      <button type="button" class="btn btn-sm btn-info m-1"><i class="fa fa-star-o"></i></button>
+      <button type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></button>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<div class="row">
+  <div class="col-md-12 mt-4">
+      <div ng2FileDrop [ngClass]="{'nv-file-over': hasBaseDropZoneOver}" (fileOver)="fileOverBase($event)" [uploader]="uploader" class="card bg-faded p-3 text-center mb-3 my-drop-zone">
+          <i class="fa fa-upload fa-3x"></i> Add more photos by dragging and dropping photos here...
+      </div>
+  </div>
+</div>
+
+<div class="row mt-2" *ngIf="uploader?.queue?.length">
+  <div class="col-md-12 mt-1" *ngFor="let item of uploader.queue">
+    <strong>{{ item?.file?.name }}</strong> <span class="text-muted ml-1">({{ item?.file?.size/1024/1024 | number:'.2' }} MB)</span>
+  </div>
+</div>
+
+<div class="row" *ngIf="uploader?.queue?.length">
+  <div class="col-md-12">
+    <div class="progress mb-4">
+        <div class="progress-bar text-center" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }">{{uploader.progress + '%'}}</div>
+    </div>
+    <button type="button" class="btn btn-success mr-1"
+            (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+        <span class="fa fa-upload"></span> Upload
+    </button>
+    <button type="button" class="btn btn-info mr-1"
+            (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">
+        <span class="fa fa-ban"></span> Cancel
+    </button>
+    <button type="button" class="btn btn-danger mr-1"
+            (click)="uploader.clearQueue()" [disabled]="!uploader.queue.length">
+        <span class="fa fa-trash"></span> Remove
+    </button>
+  </div>
+</div>
+
+  
+
