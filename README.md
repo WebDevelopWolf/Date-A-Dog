@@ -18,6 +18,7 @@ Coming Soon!
   - [14/03/2020] - Member Details - Users can now edit their own profile
   - [17/03/2020] - Member Details - Users can now add, edit and delete photos for the gallery
   - [18/03/2020] - Registration - Added validation & reactive forms to registration
+  - [18/03/2020] - Users Last Active - Dates converted to user friendly dates & user activiy logged
 
 
 You can also:
