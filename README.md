@@ -4,7 +4,7 @@ Date-A-Dog.com is an example dog dating website build using:
 
   - Angular 9
   - DotNet Core 3.1
-  - SQLite Db
+  - SQLite Db (Development)
 
 # Demo
 Coming Soon!
@@ -19,6 +19,7 @@ Coming Soon!
   - [17/03/2020] - Member Details - Users can now add, edit and delete photos for the gallery
   - [18/03/2020] - Registration - Added validation & reactive forms to registration
   - [18/03/2020] - Users Last Active - Dates converted to user friendly dates & user activiy logged
+  - [23/03/2020] - Member Organisation - Added Paging, filtering and sorting to member lists
 
 
 You can also:
@@ -26,6 +27,7 @@ You can also:
   - See other members and their details
   - Edit your own details
   - Upload and edit photos
+  - Filter & sort your matches
 
 License
 ----

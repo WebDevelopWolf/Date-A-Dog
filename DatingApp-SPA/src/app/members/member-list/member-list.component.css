@@ -1,0 +1,15 @@
+.filter {
+    background-color: #d9534f;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.g-space {
+    margin-left: 1.5rem !important;
+}
+
+.form-control {
+    background-color: darkred;
+    color: #FFF;
+}
