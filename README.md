@@ -20,6 +20,7 @@ Coming Soon!
   - [18/03/2020] - Registration - Added validation & reactive forms to registration
   - [18/03/2020] - Users Last Active - Dates converted to user friendly dates & user activiy logged
   - [23/03/2020] - Member Organisation - Added Paging, filtering and sorting to member lists
+  - [24/03/2020] - USer Likes - Added Like Functionality
 
 
 You can also:
@@ -28,6 +29,7 @@ You can also:
   - Edit your own details
   - Upload and edit photos
   - Filter & sort your matches
+  - 'Like' other users and see users who have liked you
 
 License
 ----
